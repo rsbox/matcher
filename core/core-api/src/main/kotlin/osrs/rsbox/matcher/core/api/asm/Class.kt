@@ -18,4 +18,8 @@ class Class(val group: ClassGroup, val node: ClassNode) {
      */
     val superName: String get() = node.superName
 
+    /**
+     * The methods contained in this class.
+     */
+    val methods = node.methods.map { Method(group, this, it) }
 }
