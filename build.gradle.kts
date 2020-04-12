@@ -1,9 +1,11 @@
 @file:Suppress("UnstableApiUsage")
 
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
     kotlin("jvm") version Project.kotlinVersion
+    id("com.github.johnrengelman.shadow") version Plugin.shadowJar
     application
 }
 
@@ -37,9 +39,15 @@ allprojects {
 }
 
 apply(plugin = "application")
+apply(plugin = "com.github.johnrengelman.shadow")
 
 application {
     mainClassName = "osrs.rsbox.matcher.Main"
+}
+
+tasks.withType<ShadowJar>() {
+    @Suppress("DEPRECATION")
+    archiveName = "matcher.jar"
 }
 
 dependencies {

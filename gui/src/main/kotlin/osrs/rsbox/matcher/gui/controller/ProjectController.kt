@@ -3,6 +3,8 @@ package osrs.rsbox.matcher.gui.controller
 import org.tinylog.kotlin.Logger
 import osrs.rsbox.matcher.core.api.IProjectModel
 import osrs.rsbox.matcher.core.api.asm.Environment
+import osrs.rsbox.matcher.gui.MatcherView
+import osrs.rsbox.matcher.gui.fragments.CenterFragment
 import tornadofx.Controller
 
 /**
@@ -40,5 +42,7 @@ class ProjectController : Controller() {
         environment.inputGroup.classes.forEach { c ->
             entryListController.classList.items.add(c)
         }
+
+        find<MatcherView>().root.center = CenterFragment().root
     }
 }
