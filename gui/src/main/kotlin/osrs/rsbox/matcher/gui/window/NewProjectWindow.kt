@@ -88,7 +88,11 @@ class NewProjectWindow : View("Create New Project") {
                 alignment = Pos.CENTER_RIGHT
 
                 button("Cancel").action { close() }
-                button("Create")
+                button("Create").action {
+                    if(newProjectController.createProject(model.projectName.value, inputJars, referenceJars)) {
+                        close()
+                    }
+                }
             }
         }
     }
@@ -96,8 +100,8 @@ class NewProjectWindow : View("Create New Project") {
     /**
      * Opens a file selection window and returns a single [File]
      */
-    private fun openJarChooser(): File {
-        return chooseFile("Choose Jar", mode = FileChooserMode.Single, filters = arrayOf(FileChooser.ExtensionFilter("jar", "*.jar"))).first()
+    private fun openJarChooser(): List<File> {
+        return chooseFile("Choose Jar", mode = FileChooserMode.Single, filters = arrayOf(FileChooser.ExtensionFilter("jar", "*.jar")))
     }
 
     private fun addJarFile(target: Target) {
@@ -112,7 +116,9 @@ class NewProjectWindow : View("Create New Project") {
         }
 
         val jarFile = this.openJarChooser()
-        targetObservable.add(jarFile)
+        if(jarFile.isEmpty()) return
+
+        targetObservable.add(jarFile.first())
     }
 
     private fun removeSelectedJars(target: Target) {
