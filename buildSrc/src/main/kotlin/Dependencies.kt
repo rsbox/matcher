@@ -9,6 +9,10 @@ object Project {
     val javaVersion = JavaVersion.VERSION_11
 }
 
+object Plugin {
+    const val shadowJar = "5.2.0"
+}
+
 object Library {
     private object Version {
         const val tinylog = "2.1.1"
