@@ -11,7 +11,7 @@ import osrs.rsbox.matcher.gui.api.Gui
 object Core : Injectable {
 
     /**
-     * Dependency injected gui.
+     * Injected interface implementation
      */
     private val gui: Gui by inject()
 

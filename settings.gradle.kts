@@ -1,7 +1,8 @@
 rootProject.name = "matcher"
 
-include(":core")
 include(":common")
+include(":core")
+include(":core:core-api")
 include(":gui")
-include(":gui:api")
+include(":gui:gui-api")
 
