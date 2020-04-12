@@ -1,5 +1,6 @@
 package osrs.rsbox.matcher.gui.fragments
 
+import osrs.rsbox.matcher.gui.controller.MenuController
 import tornadofx.*
 import kotlin.system.exitProcess
 
@@ -8,9 +9,14 @@ import kotlin.system.exitProcess
  */
 class MenuBarFragment : Fragment() {
 
+    /**
+     * Controllers
+     */
+    private val menuController: MenuController by inject()
+
     override val root = menubar {
         menu("File") {
-            item("New Project")
+            item("New Project").action { menuController.createNewProject() }
             item("Open Project")
             separator()
             item("Save Project")
