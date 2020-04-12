@@ -24,6 +24,11 @@ class NewProjectController : Controller() {
     private val newProjectWindow: NewProjectWindow by inject()
 
     /**
+     * Injected project controller
+     */
+    private val projectController: ProjectController by inject()
+
+    /**
      * Creates the new project.
      */
     fun createProject(projectName: String?, inputJar: List<File>, referenceJar: List<File>): Boolean {
@@ -43,6 +48,11 @@ class NewProjectController : Controller() {
          * Update the matcher view title to the new project name
          */
         find<MatcherView>().title = "RSBox Matcher - $projectName"
+
+        /**
+         * Initialize the project.
+         */
+        projectController.initProject()
 
         return true
     }

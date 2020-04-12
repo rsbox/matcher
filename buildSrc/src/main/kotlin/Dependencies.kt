@@ -14,6 +14,7 @@ object Library {
         const val tinylog = "2.1.1"
         const val koin = "2.1.5"
         const val tornadofx = "1.7.20"
+        const val asm = "8.0.1"
     }
 
     const val tinylogApi = "org.tinylog:tinylog-api-kotlin:${Version.tinylog}"
@@ -22,6 +23,10 @@ object Library {
     const val koinCoreExt = "org.koin:koin-core-ext:${Version.koin}"
     const val koinTest = "org.koin:koin-test:${Version.koin}"
     const val tornadofx = "no.tornado:tornadofx:${Version.tornadofx}"
+    const val asm = "org.ow2.asm:asm:${Version.asm}"
+    const val asmCommons = "org.ow2.asm:asm-commons:${Version.asm}"
+    const val asmUtil = "org.ow2.asm:asm-util:${Version.asm}"
+    const val asmTree = "org.ow2.asm:asm-tree:${Version.asm}"
 }
 
 fun DependencyHandlerScope.tinylog() {
@@ -33,4 +38,11 @@ fun DependencyHandlerScope.koin() {
     "implementation"(Library.koinCore)
     "implementation"(Library.koinCoreExt)
     "testImplementation"(Library.koinTest)
+}
+
+fun DependencyHandlerScope.asm() {
+    "implementation"(Library.asm)
+    "implementation"(Library.asmUtil)
+    "implementation"(Library.asmCommons)
+    "implementation"(Library.asmTree)
 }
