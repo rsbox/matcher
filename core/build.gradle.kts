@@ -1,5 +1,4 @@
 dependencies {
     api(project(":common"))
-    api(project(":core:api"))
-    api(project(":gui:api"))
+    api(project(":gui:gui-api"))
 }

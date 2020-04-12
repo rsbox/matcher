@@ -45,7 +45,6 @@ application {
 dependencies {
     implementation(project(":common"))
     implementation(project(":core"))
-    implementation(project(":core:api"))
     implementation(project(":gui"))
-    implementation(project(":gui:api"))
+    implementation(project(":gui:gui-api"))
 }

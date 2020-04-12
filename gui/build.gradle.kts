@@ -9,7 +9,7 @@ javafx {
 
 dependencies {
     api(project(":common"))
-    api(project(":gui:api"))
+    api(project(":gui:gui-api"))
 
     implementation(Library.tornadofx)
 }
