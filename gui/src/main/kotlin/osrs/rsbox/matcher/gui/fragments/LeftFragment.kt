@@ -41,6 +41,11 @@ class LeftFragment : Fragment() {
 
                     val selectedClass = it.list.first() ?: return@onChange
                     entryListController.methodList.items.setAll(selectedClass.methods)
+
+                    /**
+                     * Update the decompiled source.
+                     */
+                    find<CenterFragment>().inputTabPane.decompileClass(selectedClass)
                 }
 
                 entryListController.classList = this

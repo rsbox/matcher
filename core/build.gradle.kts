@@ -4,4 +4,5 @@ dependencies {
     api(project(":core:core-api"))
 
     asm()
+    implementation(Library.procyon)
 }

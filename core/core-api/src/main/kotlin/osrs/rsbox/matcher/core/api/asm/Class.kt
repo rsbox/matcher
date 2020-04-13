@@ -5,7 +5,12 @@ import org.objectweb.asm.tree.ClassNode
 /**
  * Represents an ASM loaded class file.
  */
-class Class(val group: ClassGroup, val node: ClassNode) {
+class Class(val group: ClassGroup, val node: ClassNode) : Matchable<Class> {
+
+    /**
+     * The matched class.
+     */
+    override var match: Class? = null
 
     /**
      * The name of the class
