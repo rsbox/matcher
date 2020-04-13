@@ -17,11 +17,14 @@ class CenterFragment : Fragment() {
      */
     private val environment: Environment by di()
 
+    val inputTabPane = TabEntryView(environment.inputGroup)
+    val referenceTabPane = TabEntryView(environment.referenceGroup)
+
     init {
         with(root) {
 
-            this.add(TabEntryView(environment.inputGroup).root)
-            this.add(TabEntryView(environment.referenceGroup).root)
+            this.add(inputTabPane.root)
+            this.add(referenceTabPane.root)
 
             setDividerPosition(0, 0.5)
         }

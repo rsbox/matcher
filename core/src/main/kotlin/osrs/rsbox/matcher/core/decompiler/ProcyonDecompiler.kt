@@ -40,7 +40,10 @@ class ProcyonDecompiler : Decompiler {
             val cls = clazz.group.classes.firstOrNull { it.name == internalName }
 
             if(cls == null) {
-                Logger.error("Decompile: Missing class: $internalName from class group.")
+                if(!internalName.startsWith("java/") && !internalName.startsWith("sun/")) {
+                    Logger.error("Decompiler: Class not found in class group: $internalName.")
+                }
+
                 return false
             }
 

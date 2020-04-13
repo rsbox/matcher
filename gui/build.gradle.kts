@@ -13,4 +13,5 @@ dependencies {
     api(project(":core:core-api"))
 
     implementation(Library.tornadofx)
+    implementation(Library.coroutines)
 }
