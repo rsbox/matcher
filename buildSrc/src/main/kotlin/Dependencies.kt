@@ -19,6 +19,9 @@ object Library {
         const val koin = "2.1.5"
         const val tornadofx = "1.7.20"
         const val asm = "8.0.1"
+        const val fernflower = "1.0.0.6"
+        const val procyon = "0.5.33.6"
+        const val coroutines = "1.3.5"
     }
 
     const val tinylogApi = "org.tinylog:tinylog-api-kotlin:${Version.tinylog}"
@@ -31,6 +34,9 @@ object Library {
     const val asmCommons = "org.ow2.asm:asm-commons:${Version.asm}"
     const val asmUtil = "org.ow2.asm:asm-util:${Version.asm}"
     const val asmTree = "org.ow2.asm:asm-tree:${Version.asm}"
+    const val fernflower = "org.jetbrains:intellij-fernflower:${Version.fernflower}"
+    const val procyon = "org.bitbucket.mstrobel:procyon-compilertools:${Version.procyon}"
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.coroutines}"
 }
 
 fun DependencyHandlerScope.tinylog() {
